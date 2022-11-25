@@ -1,20 +1,20 @@
-"use strict";
-const path = require("path");
-const { app, BrowserWindow, Menu } = require("electron");
+'use strict';
+const path = require('path');
+const {app, BrowserWindow, Menu} = require('electron');
 /// const {autoUpdater} = require('electron-updater');
-const { is } = require("electron-util");
-const unhandled = require("electron-unhandled");
-const debug = require("electron-debug");
-const contextMenu = require("electron-context-menu");
-const config = require("./config.js");
-const menu = require("./menu.js");
+const {is} = require('electron-util');
+const unhandled = require('electron-unhandled');
+const debug = require('electron-debug');
+const contextMenu = require('electron-context-menu');
+const config = require('./config.js');
+const menu = require('./menu.js');
 
 unhandled();
 debug();
 contextMenu();
 
 // Note: Must match `build.appId` in package.json
-app.setAppUserModelId("com.company.AppName");
+app.setAppUserModelId('com.company.AppName');
 
 // Uncomment this before publishing your first version.
 // It's commented out as it throws an error if there are no published versions.
@@ -38,17 +38,17 @@ const createMainWindow = async () => {
 		height: 720,
 	});
 
-	window_.on("ready-to-show", () => {
+	window_.on('ready-to-show', () => {
 		window_.show();
 	});
 
-	window_.on("closed", () => {
+	window_.on('closed', () => {
 		// Dereference the window
 		// For multiple windows store them in an array
 		mainWindow = undefined;
 	});
 
-	await window_.loadURL("https://java-player.netlify.app");
+	await window_.loadURL('https://java-player.netlify.app');
 	// await window_.loadFile(path.join(__dirname, 'index.html'));
 
 	return window_;
@@ -59,7 +59,7 @@ if (!app.requestSingleInstanceLock()) {
 	app.quit();
 }
 
-app.on("second-instance", () => {
+app.on('second-instance', () => {
 	if (mainWindow) {
 		if (mainWindow.isMinimized()) {
 			mainWindow.restore();
@@ -69,13 +69,13 @@ app.on("second-instance", () => {
 	}
 });
 
-app.on("window-all-closed", () => {
+app.on('window-all-closed', () => {
 	if (!is.macos) {
 		app.quit();
 	}
 });
 
-app.on("activate", async () => {
+app.on('activate', async () => {
 	if (!mainWindow) {
 		mainWindow = await createMainWindow();
 	}
@@ -86,7 +86,7 @@ app.on("activate", async () => {
 	Menu.setApplicationMenu(menu);
 	mainWindow = await createMainWindow();
 
-	const favoriteAnimal = config.get("favoriteAnimal");
+	const favoriteAnimal = config.get('favoriteAnimal');
 	mainWindow.webContents.executeJavaScript(
 		`document.querySelector('header p').textContent = 'Your favorite animal is ${favoriteAnimal}'`,
 	);
