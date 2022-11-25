@@ -34,8 +34,8 @@ const createMainWindow = async () => {
 	const window_ = new BrowserWindow({
 		title: app.name,
 		show: false,
-		width: 600,
-		height: 400,
+		width: 1300,
+		height: 720,
 	});
 
 	window_.on("ready-to-show", () => {
@@ -48,7 +48,7 @@ const createMainWindow = async () => {
 		mainWindow = undefined;
 	});
 
-	await window_.loadURL("http://localhost:3000");
+	await window_.loadURL("https://java-player.netlify.app");
 	// await window_.loadFile(path.join(__dirname, 'index.html'));
 
 	return window_;
@@ -88,6 +88,6 @@ app.on("activate", async () => {
 
 	const favoriteAnimal = config.get("favoriteAnimal");
 	mainWindow.webContents.executeJavaScript(
-		`document.querySelector('header p').textContent = 'Your favorite animal is ${favoriteAnimal}'`
+		`document.querySelector('header p').textContent = 'Your favorite animal is ${favoriteAnimal}'`,
 	);
 })();

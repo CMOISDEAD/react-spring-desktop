@@ -1,0 +1,103 @@
+Arguments: 
+  /usr/bin/node /usr/bin/yarn install
+
+PATH: 
+  /home/camilo/.local/share/pnpm:/home/camilo/gems/bin:/home/camilo/.local/bin:/home/camilo/.bun/bin:/home/camilo/go/bin:/home/camilo/Documents/git/flutter/bin:/home/camilo/.local/share/gem/ruby/3.0.0/bin:/home/camilo/.local/share/pnpm:/home/camilo/gems/bin:/home/camilo/.local/bin:/home/camilo/.bun/bin:/home/camilo/go/bin:/home/camilo/Documents/git/flutter/bin:/home/camilo/.local/share/gem/ruby/3.0.0/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/camilo/.spicetify:/home/camilo/.spicetify
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  19.1.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile '/home/camilo/.cache/yarn/v6/npm-ms-2.1.3-574c8138ce1d2b5861f0b44579dbadd60c6615b2-integrity/node_modules/ms/index.js' -> '/home/camilo/Documents/git/java-player/desktop/node_modules/eslint-import-resolver-node/node_modules/ms/index.js'
+
+npm manifest: 
+  {
+  	"name": "app-name",
+  	"productName": "App Name",
+  	"version": "0.0.0",
+  	"description": "The best app ever",
+  	"license": "MIT",
+  	"repository": "CMOISDEAD/react-spring-dekstop",
+  	"author": {
+  		"name": "DROPDEADS",
+  		"email": "dropdeads@protonmail.com",
+  		"url": "https://sindresorhus.com"
+  	},
+  	"scripts": {
+  		"postinstall": "electron-builder install-app-deps",
+  		"lint": "xo",
+  		"test": "npm run lint",
+  		"start": "electron .",
+  		"pack": "electron-builder --dir",
+  		"dist": "electron-builder --macos --linux --windows",
+  		"release": "np"
+  	},
+  	"dependencies": {
+  		"electron-context-menu": "^3.4.0",
+  		"electron-debug": "^3.2.0",
+  		"electron-store": "^8.1.0",
+  		"electron-unhandled": "^4.0.1",
+  		"electron-updater": "^5.2.1",
+  		"electron-util": "^0.17.2"
+  	},
+  	"devDependencies": {
+  		"electron": "^13.0.0",
+  		"electron-builder": "^23.3.3",
+  		"np": "^7.6.2",
+  		"xo": "^0.51.0"
+  	},
+  	"xo": {
+  		"envs": [
+  			"node",
+  			"browser"
+  		],
+  		"rules": {
+  			"unicorn/prefer-module": "off"
+  		}
+  	},
+  	"np": {
+  		"publish": false,
+  		"releaseDraft": false
+  	},
+  	"build": {
+  		"appId": "com.company.AppName",
+  		"mac": {
+  			"category": "public.app-category.social-networking",
+  			"darkModeSupport": true
+  		},
+  		"dmg": {
+  			"iconSize": 160,
+  			"contents": [
+  				{
+  					"x": 180,
+  					"y": 170
+  				},
+  				{
+  					"x": 480,
+  					"y": 170,
+  					"type": "link",
+  					"path": "/Applications"
+  				}
+  			]
+  		},
+  		"linux": {
+  			"target": [
+  				"AppImage",
+  				"deb"
+  			],
+  			"category": "Network;Chat"
+  		}
+  	}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
