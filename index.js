@@ -1,5 +1,5 @@
 'use strict';
-const path = require('path');
+// const path = require('path');
 const {app, BrowserWindow, Menu} = require('electron');
 /// const {autoUpdater} = require('electron-updater');
 const {is} = require('electron-util');
@@ -49,7 +49,7 @@ const createMainWindow = async () => {
 	});
 
 	await window_.loadURL('https://java-player.netlify.app');
-	// await window_.loadFile(path.join(__dirname, 'index.html'));
+	// A await window_.loadFile(path.join(__dirname, 'index.html'));
 
 	return window_;
 };
