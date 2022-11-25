@@ -52,7 +52,7 @@ if (!is.macos) {
 		aboutMenuItem({
 			icon: path.join(__dirname, "static", "icon.png"),
 			text: "Created by Your Name",
-		})
+		}),
 	);
 }
 
